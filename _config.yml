@@ -58,7 +58,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
+search                   : true # , false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia
 algolia:
@@ -100,7 +100,7 @@ author:
   name             : "Mazhar"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an amazing person."
-  location         : "Somewhere"
+  location         :
   email            : Mazhar.ansari.ardeh @ google's mail service
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
@@ -252,6 +252,10 @@ compress_html:
   ignore:
     envs: development
 
+collections:
+  book_reviews:
+    output: true
+    permalink: /:collection/:path
 
 # Defaults
 defaults:
@@ -265,4 +269,14 @@ defaults:
       read_time: true
       comments: # true
       share: true
+      related: true
+  - scope:
+      path: ""
+      type: book_reviews
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      read_time: true
+      comments: false
       related: true

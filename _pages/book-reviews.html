@@ -1,0 +1,12 @@
+---
+layout: archive
+title: "Book Reviews"
+permalink: /book_reviews/
+author_profile: true
+---
+
+<div class="grid__wrapper">
+  {% for post in site.book_reviews %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
